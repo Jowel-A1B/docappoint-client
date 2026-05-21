@@ -2,10 +2,16 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { auth, googleProvider } from "../firebase";
 import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import axios from "axios";
-import toast from "react-hot-toast";
 
 const AuthContext = createContext();
 const API = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+
+// Axios interceptor — সব request-এ token automatically যাবে
+axios.interceptors.request.use((config) => {
+  const token = localStorage.getItem("docappoint_token");
+  if (token) config.headers.Authorization = `Bearer ${token}`;
+  return config;
+});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -17,38 +23,40 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const saveUser = (userData) => {
+  const saveUser = (userData, token) => {
     setUser(userData);
     localStorage.setItem("docappoint_user", JSON.stringify(userData));
+    if (token) localStorage.setItem("docappoint_token", token);
   };
 
   const register = async (name, email, password, photoURL) => {
-    await axios.post(`${API}/auth/register`, { name, email, password, photoURL }, { withCredentials: true });
+    await axios.post(`${API}/auth/register`, { name, email, password, photoURL });
   };
 
   const login = async (email, password) => {
-    const res = await axios.post(`${API}/auth/login`, { email, password }, { withCredentials: true });
-    saveUser(res.data.user);
+    const res = await axios.post(`${API}/auth/login`, { email, password });
+    saveUser(res.data.user, res.data.token);
     return res.data;
   };
 
   const googleLogin = async () => {
     const result = await signInWithPopup(auth, googleProvider);
     const { displayName, email, photoURL } = result.user;
-    const res = await axios.post(`${API}/auth/social-login`, { name: displayName, email, photoURL }, { withCredentials: true });
-    saveUser(res.data.user);
+    const res = await axios.post(`${API}/auth/social-login`, { name: displayName, email, photoURL });
+    saveUser(res.data.user, res.data.token);
     return res.data;
   };
 
   const logout = async () => {
-    await axios.post(`${API}/auth/logout`, {}, { withCredentials: true });
+    await axios.post(`${API}/auth/logout`);
     await signOut(auth);
     setUser(null);
     localStorage.removeItem("docappoint_user");
+    localStorage.removeItem("docappoint_token");
   };
 
   const updateProfile = async (name, photoURL) => {
-    const res = await axios.put(`${API}/auth/update-profile`, { email: user.email, name, photoURL }, { withCredentials: true });
+    const res = await axios.put(`${API}/auth/update-profile`, { email: user.email, name, photoURL });
     saveUser(res.data.user);
   };
 
