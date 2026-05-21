@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async'
 import { useAuth } from '../../context/AuthContext'
 import { FaCalendarAlt, FaUser } from 'react-icons/fa'
 
+// Dashboard layout: provides user sidebar and nested routes via <Outlet>.
+// Keep route children responsibility to their own modules.
 const Dashboard = () => {
   const { user } = useAuth()
 

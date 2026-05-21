@@ -5,6 +5,8 @@ import { useAuth } from '../../context/AuthContext'
 import { useTheme } from '../../context/ThemeContext'
 import toast from 'react-hot-toast'
 
+// Navbar: renders site navigation, user actions, and theme toggle.
+// Keep rendering logic untouched; comment added for maintainers.
 const Navbar = () => {
   const { user, logout } = useAuth()
   const { isDark, toggleTheme } = useTheme()

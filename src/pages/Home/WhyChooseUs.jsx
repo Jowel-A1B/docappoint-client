@@ -5,6 +5,8 @@ const features = [
   { icon: '💬', title: '24/7 Support', desc: 'Our support team is always ready to help with your queries.' },
 ]
 
+// WhyChooseUs: static features grid used on Home page.
+// Keep content concise; this is a purely presentational module.
 const WhyChooseUs = () => (
   <section className="py-16 bg-white dark:bg-gray-900">
     <div className="max-w-7xl mx-auto px-4">

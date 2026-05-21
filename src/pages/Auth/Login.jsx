@@ -5,6 +5,8 @@ import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 import { FaGoogle, FaEye, FaEyeSlash, FaStethoscope } from 'react-icons/fa'
 
+// Login page: handles email/password and Google social login.
+// On success navigates back to the `from` location preserved in state.
 const Login = () => {
   const { login, googleLogin } = useAuth()
   const navigate = useNavigate()

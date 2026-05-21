@@ -1,6 +1,8 @@
 import { Navigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 
+// PrivateRoute: guards protected routes and shows a spinner while auth loads.
+// Important: returns `children` unchanged when user is authenticated.
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth()
   const location = useLocation()

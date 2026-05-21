@@ -11,6 +11,8 @@ import { FaStar, FaMapMarkerAlt, FaHospital, FaClock, FaMoneyBillWave } from 're
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
+// DoctorDetails: fetches a single doctor by ID and shows booking/reviews.
+// Navigation fallback: on fetch error, redirects to /appointments.
 const DoctorDetails = () => {
   const { id } = useParams()
   const { user } = useAuth()

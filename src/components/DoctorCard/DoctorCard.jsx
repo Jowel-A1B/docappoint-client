@@ -2,6 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../../context/AuthContext'
 import { FaStar, FaMapMarkerAlt, FaHospital } from 'react-icons/fa'
 
+// DoctorCard: small presentational card used across listings.
+// Navigation behavior: redirects unauthenticated users to login.
 const DoctorCard = ({ doctor }) => {
   const { user } = useAuth()
   const navigate = useNavigate()

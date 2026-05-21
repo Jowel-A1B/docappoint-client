@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { FaStethoscope, FaFacebookF, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
+// Footer: contains branding, quick links and contact info.
+// Static presentational component — safe to update styles only.
 const Footer = () => (
   <footer className="bg-gray-900 dark:bg-gray-950 text-gray-300 pt-14 pb-6">
     <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10">

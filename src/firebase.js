@@ -14,3 +14,6 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export default app;
+
+// Note: Firebase config values are loaded from `import.meta.env` (Vite).
+// Ensure environment variables are set in the client's .env for dev/production.

@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 
+// TopDoctors: fetches top-rated doctors on mount and shows a loader.
+// Network call is read-only; avoid changing axios call semantics.
 const TopDoctors = () => {
   const [doctors, setDoctors] = useState([])
   const [loading, setLoading] = useState(true)

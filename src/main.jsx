@@ -7,6 +7,9 @@ import './index.css'
 import { AuthProvider } from './context/AuthContext.jsx'
 import { ThemeProvider } from './context/ThemeContext.jsx'
 
+// Entry point: mount React app with global providers (Helmet, Router, Theme, Auth).
+// This comment is non-functional and for maintainers only.
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <HelmetProvider>

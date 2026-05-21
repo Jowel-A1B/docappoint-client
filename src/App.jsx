@@ -13,6 +13,9 @@ import MyProfile from './pages/Dashboard/MyProfile'
 import PrivateRoute from './components/Shared/PrivateRoute'
 import NotFound from './pages/NotFound'
 
+// App routing: centralizes public and protected routes.
+// Keep behavior unchanged; this comment explains route layout.
+
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">

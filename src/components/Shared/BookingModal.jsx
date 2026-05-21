@@ -8,6 +8,8 @@ const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
 const inputClass = "w-full px-4 py-2.5 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
 const readonlyClass = "w-full px-4 py-2.5 border border-gray-200 dark:border-gray-700 rounded-xl bg-gray-50 dark:bg-gray-800 text-gray-400 cursor-not-allowed"
 
+// BookingModal: handles form state and submits appointment to server.
+// Uses `withCredentials: true` to send auth cookies; do not remove.
 const BookingModal = ({ doctor, onClose }) => {
   const { user } = useAuth()
   const [loading, setLoading] = useState(false)

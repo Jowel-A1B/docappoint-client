@@ -7,6 +7,8 @@ import { FiSearch } from 'react-icons/fi';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
+// AllAppointments: search, sort and list doctors.
+// Note: `fetchDoctors` respects `search` and `sort` query params.
 const AllAppointments = () => {
   const [doctors, setDoctors] = useState([]);
   const [loading, setLoading] = useState(true);

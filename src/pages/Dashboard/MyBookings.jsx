@@ -15,6 +15,8 @@ const statusStyle = {
   cancelled: 'bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400',
 }
 
+// MyBookings: lists user appointments and exposes update/delete actions.
+// API calls use `{ withCredentials: true }` to include auth cookie.
 const MyBookings = () => {
   const [bookings, setBookings] = useState([])
   const [loading, setLoading] = useState(true)

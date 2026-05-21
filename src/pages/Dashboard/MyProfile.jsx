@@ -6,6 +6,8 @@ import { FaUser, FaEdit, FaTimes } from 'react-icons/fa'
 
 const inputClass = "w-full px-4 py-3 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-sky-400 bg-white dark:bg-gray-700 text-gray-800 dark:text-white"
 
+// MyProfile: allows user to view and update profile fields (name, photoURL).
+// `updateProfile` is provided by AuthContext and should handle server sync.
 const MyProfile = () => {
   const { user, updateProfile } = useAuth()
   const [showModal, setShowModal] = useState(false)

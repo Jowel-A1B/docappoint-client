@@ -5,6 +5,8 @@ import { useAuth } from '../../context/AuthContext'
 import toast from 'react-hot-toast'
 import { FaGoogle, FaEye, FaEyeSlash, FaStethoscope } from 'react-icons/fa'
 
+// Register page: client-side validation before calling `register`.
+// Password policy enforced locally; server performs its own checks too.
 const Register = () => {
   const { register, googleLogin } = useAuth()
   const navigate = useNavigate()

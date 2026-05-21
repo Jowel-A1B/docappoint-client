@@ -5,6 +5,8 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/effect-fade'
 
+// HeroBanner: uses Swiper to render promotional slides.
+// Images are external; ensure licenses before changing assets.
 const slides = [
   {
     title: "Book Your Doctor Appointment Instantly",
