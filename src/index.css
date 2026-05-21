@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+* { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+
+.btn-primary {
+  background-color: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  padding: 0.625rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+.btn-primary:hover { background-color: #0284c7; }
