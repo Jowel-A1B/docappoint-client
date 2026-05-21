@@ -1,35 +1,24 @@
 # DocAppoint - Doctor Appointment Booking System
 
-🌐 **Live Site:** [https://docappoint.vercel.app](https://docappoint.vercel.app)
+🌐 **Live Site:** [https://docappoint-client-five.vercel.app](https://docappoint-client-five.vercel.app)
 
-A modern, full-stack doctor appointment booking platform built with React, Node.js, Express, and MongoDB.
+## About
 
-## ✨ Features
+DocAppoint is a modern doctor appointment booking platform where users can browse top-rated doctors, view details, and book appointments online. Built with React, Node.js, MongoDB, and Firebase Authentication.
 
-- 🔐 **Secure Authentication** — Email/password login + Google OAuth with JWT-based session management
-- 🏥 **Browse & Search Doctors** — Find top-rated specialists by name or specialty with sorting options
-- 📅 **Instant Appointment Booking** — Book appointments in seconds with a clean, intuitive booking modal
-- 📊 **Personal Dashboard** — Manage all your bookings with full update and delete capabilities
-- ⭐ **Doctor Reviews** — Leave and read patient reviews after appointments
-- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop devices
+## Features
 
-## 🛠️ Tech Stack
+- 🔐 **Secure Authentication** — Google login with Firebase and JWT-based session management for secure access to all private routes.
+- 📅 **Easy Appointment Booking** — Users can browse doctors, view detailed profiles, and book appointments with a simple and intuitive form.
+- 📋 **Manage Bookings** — Logged-in users can view, update, and delete their appointments from a personal dashboard.
+- 🔍 **Search & Sort** — Find doctors instantly by name using the search feature, with sorting options for better browsing experience.
+- 🌙 **Dark Mode Support** — Full dark/light theme toggle for a comfortable user experience across all devices.
+- ⭐ **Top Rated Doctors** — Home page highlights the 3 highest-rated doctors dynamically from the database.
+- 📱 **Fully Responsive** — Optimized for mobile, tablet, and desktop with a clean and modern UI design.
 
-- **Frontend:** React, React Router DOM, Tailwind CSS, Vite
-- **Auth:** Firebase (Google OAuth), JWT
-- **UI:** React Icons, Swiper.js, React Hot Toast, React Helmet Async
+## Tech Stack
+
+- **Frontend:** React, Vite, Tailwind CSS, React Router
 - **Backend:** Node.js, Express.js, MongoDB, Mongoose
-
-## 🚀 Run Locally
-
-```bash
-# Install dependencies
-npm install
-
-# Add environment variables
-cp .env.example .env
-# Fill in your Firebase and API values
-
-# Start dev server
-npm run dev
-```
+- **Authentication:** Firebase (Google Login), JWT
+- **Deployment:** Vercel (Client), Render (Server)
